@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Meta from './Meta';
 import Header from './Header';
 
 class Page extends Component {
@@ -7,6 +8,7 @@ class Page extends Component {
 
     return (
       <div>
+        <Meta />
         <Header />
         {children}
       </div>
