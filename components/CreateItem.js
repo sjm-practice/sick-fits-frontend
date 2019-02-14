@@ -51,6 +51,24 @@ class CreateItem extends Component {
     });
   };
 
+  uploadFile = async e => {
+    const { files } = e.target;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "sickfits");
+
+    const res = await fetch("https://api.cloudinary.com/v1_1/smarsh/image/upload", {
+      method: "POST",
+      body: data,
+    });
+    const file = await res.json();
+    console.log(file);
+    this.setState({
+      image: file.secure_url,
+      largeImage: file.eager[0].secure_url,
+    });
+  };
+
   render() {
     const { title, price, description } = this.state;
 
@@ -60,6 +78,18 @@ class CreateItem extends Component {
           <Form onSubmit={e => this.handleSubmit(e, createItem)}>
             <ErrorMessage error={error} />
             <fieldset disabled={loading} aria-busy={loading}>
+              <label htmlFor="image">
+                Image
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  required
+                  placeholder="Upload An Image"
+                  onChange={this.uploadFile}
+                />
+              </label>
+
               <label htmlFor="title">
                 Title
                 <input
