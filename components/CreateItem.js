@@ -4,7 +4,6 @@ import Router from "next/router";
 import gql from "graphql-tag";
 import Form from "./styles/Form";
 import ErrorMessage from "./ErrorMessage";
-import formatMoney from "../lib/formatMoney";
 
 export const CREATE_ITEM_MUTATION = gql`
   mutation CREATE_ITEM_MUTATION(
@@ -66,7 +65,7 @@ class CreateItem extends Component {
     console.log(file);
     this.setState({
       image: file.secure_url,
-      largeImage: file.eager[0].secure_url, //
+      largeImage: file.eager[0].secure_url, // eslint-disable-line react/no-unused-state
     });
   };
 

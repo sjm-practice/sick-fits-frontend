@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Mutation, Query } from "react-apollo";
-import Router from "next/router";
 import gql from "graphql-tag";
 import Form from "./styles/Form";
 import ErrorMessage from "./ErrorMessage";
-import formatMoney from "../lib/formatMoney";
 
 export const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!) {
@@ -54,7 +52,6 @@ class UpdateItem extends Component {
   };
 
   render() {
-    const { title, price, description } = this.state;
     const { id } = this.props;
 
     return (
@@ -64,10 +61,10 @@ class UpdateItem extends Component {
           if (!data.item) return <p>No Item found for ID {id}.</p>;
           return (
             <Mutation mutation={UPDATE_ITEM_MUTATION} variables={this.state}>
-              {(updateItem, { loading, error }) => (
+              {(updateItem, { loading: mLoading, error }) => (
                 <Form onSubmit={e => this.handleSubmit(e, updateItem)}>
                   <ErrorMessage error={error} />
-                  <fieldset disabled={loading} aria-busy={loading}>
+                  <fieldset disabled={mLoading} aria-busy={mLoading}>
                     <label htmlFor="title">
                       Title
                       <input
@@ -105,7 +102,7 @@ class UpdateItem extends Component {
                       />
                     </label>
                   </fieldset>
-                  <button type="submit">Sav{loading ? "ing" : "e"} Changes</button>
+                  <button type="submit">Sav{mLoading ? "ing" : "e"} Changes</button>
                 </Form>
               )}
             </Mutation>
