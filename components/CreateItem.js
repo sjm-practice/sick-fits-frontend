@@ -29,7 +29,7 @@ class CreateItem extends Component {
   state = {
     title: "Sample",
     description: "Sample Description",
-    image: "sample.jpg",
+    image: "",
     largeImage: "large-sample.jpg",
     price: 1000,
   };
@@ -70,7 +70,7 @@ class CreateItem extends Component {
   };
 
   render() {
-    const { title, price, description } = this.state;
+    const { title, price, description, image } = this.state;
 
     return (
       <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
@@ -88,6 +88,7 @@ class CreateItem extends Component {
                   placeholder="Upload An Image"
                   onChange={this.uploadFile}
                 />
+                {image && <img width="200" src={image} alt="Upload Preview" />}
               </label>
 
               <label htmlFor="title">
