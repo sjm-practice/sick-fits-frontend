@@ -1,9 +1,9 @@
-// Next imports React.
-import Link from 'next/link';
+import React from "react";
+import CreateItem from "../components/CreateItem";
 
 const Sell = () => (
   <div>
-    <p>Sell!</p>
+    <CreateItem />
   </div>
 );
 

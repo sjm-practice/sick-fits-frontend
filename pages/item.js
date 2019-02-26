@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Items from "../components/Items";
+import SingleItem from "../components/SingleItem";
 
-const Home = ({ query: { page } }) => (
+const Item = ({ query }) => (
   <div>
-    <Items page={parseFloat(page) || 1} />
+    <SingleItem id={query.id} />
   </div>
 );
 
-Home.propTypes = {
+Item.propTypes = {
   query: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
-export default Home;
+export default Item;
