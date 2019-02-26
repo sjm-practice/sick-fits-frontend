@@ -16,6 +16,7 @@ Coding along with Wes Bos' [Advanced React Tutorial.](https://advancedreact.com/
     + describes the prisma API for this data
   - **schema.graphql:** file we create / maintain to define the public facing API
 * using cookie to store logged in user (JWT - json web token) instead of local storage, because that better supports SSR
+* in Signup component, Form component method is set to post, which prevents the password from showing up in the url in error conditions (default method is get, which would)
   
 ## Topics
 
