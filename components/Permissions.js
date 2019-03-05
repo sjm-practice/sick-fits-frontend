@@ -95,6 +95,7 @@ class UserRow extends Component {
           <td key={permission}>
             <label htmlFor={`${id}-permission-${permission}`}>
               <input
+                id={`${id}-permission-${permission}`}
                 type="checkbox"
                 checked={permissions.includes(permission)}
                 value={permission}
