@@ -60,7 +60,7 @@ class Items extends Component {
             );
           }}
         </Query>
-        <Pagination />
+        <Pagination page={page} />
       </Center>
     );
   }
