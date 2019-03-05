@@ -31,6 +31,7 @@
   "rules": {
     "semi": "error",
     "no-console": "off",
+    "no-alert": "off",
     "no-multi-spaces": [
       "warn",
       {
