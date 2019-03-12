@@ -36,7 +36,7 @@ const Cart = () => (
                     <CloseButton onClick={toggleCart} title="close">
                       &times;
                     </CloseButton>
-                    <Supreme>{me.name}'s Cart</Supreme>
+                    <Supreme>{me.name}&#39;s Cart</Supreme>
                     <p>
                       You Have {me.cart.length} Item{me.cart.length === 1 ? "" : "s"} in
                       your cart.
