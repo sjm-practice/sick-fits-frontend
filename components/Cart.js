@@ -39,6 +39,7 @@ const Cart = () => (
       } = user;
       if (!me) return null;
 
+      const { name, cart } = me;
       const {
         data: { cartOpen },
       } = localState;
@@ -49,20 +50,19 @@ const Cart = () => (
             <CloseButton onClick={toggleCart} title="close">
               &times;
             </CloseButton>
-            <Supreme>{me.name}&#39;s Cart</Supreme>
+            <Supreme>{name}&#39;s Cart</Supreme>
             <p>
-              You Have {me.cart.length} Product{me.cart.length === 1 ? "" : "s"} in your
-              cart.
+              You have {cart.length} product{cart.length === 1 ? "" : "s"} in your cart.
             </p>
           </header>
 
           <ul>
-            {me.cart.map(cartItem => (
+            {cart.map(cartItem => (
               <CartItem key={cartItem.id} cartItem={cartItem} />
             ))}
           </ul>
           <footer>
-            <p>{formatMoney(calcTotalPrice(me.cart))}</p>
+            <p>{formatMoney(calcTotalPrice(cart))}</p>
             <SickButton>Checkout</SickButton>
           </footer>
         </CartStyles>
