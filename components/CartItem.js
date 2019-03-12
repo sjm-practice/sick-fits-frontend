@@ -19,11 +19,19 @@ const CartItemStyles = styled.li`
 `;
 
 const CartItem = ({ cartItem }) => {
-  const {
-    item: { image, title, price },
-    quantity,
-    id,
-  } = cartItem;
+  const { item, quantity, id } = cartItem;
+
+  if (!item) {
+    return (
+      <CartItemStyles>
+        <p>This item has been removed.</p>
+        <RemoveFromCart id={cartItem.id} />
+      </CartItemStyles>
+    );
+  }
+
+  const { image, title, price } = item;
+
   return (
     <CartItemStyles>
       <img width="100" src={image} alt={title} />
