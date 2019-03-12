@@ -4,6 +4,7 @@ import { Mutation } from "react-apollo";
 import NavStyles from "./styles/NavStyles";
 import User from "./User";
 import Signout from "./Signout";
+import CartCount from "./CartCount";
 import { TOGGLE_CART_MUTATION } from "./Cart";
 
 // next.js treats <> as a React Fragment
@@ -31,6 +32,9 @@ const Nav = () => (
               {toggleCart => (
                 <button type="button" onClick={toggleCart}>
                   My Cart
+                  <CartCount
+                    count={me.cart.reduce((tally, { quantity }) => tally + quantity, 0)}
+                  />
                 </button>
               )}
             </Mutation>
