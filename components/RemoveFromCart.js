@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Mutation } from "react-apollo";
 import styled from "styled-components";
 import gql from "graphql-tag";
-import User, { CURRENT_USER_QUERY } from "./User";
+import { CURRENT_USER_QUERY } from "./User";
 
 const REMOVE_FROM_CART_MUTATION = gql`
   mutation REMOVE_FROM_CART_MUTATION($id: ID!) {
@@ -60,7 +60,7 @@ class RemoveFromCart extends Component {
           },
         }}
       >
-        {(removeFromCart, { loading, error }) => (
+        {(removeFromCart, { loading }) => (
           <BigButton
             title="Delete Item"
             disabled={loading}
