@@ -21,6 +21,9 @@ Coding along with Wes Bos' [Advanced React Tutorial.](https://advancedreact.com/
   - define gql mutation or query in component
 * using cookie to store logged in user (JWT - json web token) instead of local storage, because that better supports SSR
 * in Signup component, Form component method is set to post, which prevents the password from showing up in the url in error conditions (default method is get, which would)
+* Apollo - Optimistic Response: Apollo provides an optimistic response feature, which allows the developer to provide an expected response from the server mutation
+  - this causes the update method to be called twice. once immediately, using the value in optimisticResponse for payload. then called a second time, when the actual server response is received (which uses the actual payload value)
+
   
 ## Topics
 
