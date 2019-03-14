@@ -24,6 +24,11 @@ Coding along with Wes Bos' [Advanced React Tutorial.](https://advancedreact.com/
 * Apollo - Optimistic Response: Apollo provides an optimistic response feature, which allows the developer to provide an expected response from the server mutation
   - this causes the update method to be called twice. once immediately, using the value in optimisticResponse for payload. then called a second time, when the actual server response is received (which uses the actual payload value)
 
+## Cool Packages / Components
+* Downshift
+* Stripe / StripeCheckout
+* lodash debounce
+* format-dns -does date formatting, similar to moment.js plus some other stuff (treeshaking?)
   
 ## Topics
 
