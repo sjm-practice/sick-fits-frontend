@@ -28,6 +28,7 @@ Coding along with Wes Bos' [Advanced React Tutorial.](https://advancedreact.com/
 * Downshift
 * Stripe / StripeCheckout
 * lodash debounce
+* format-dns -does date formatting, similar to moment.js plus some other stuff (treeshaking?)
   
 ## Topics
 
