@@ -15,6 +15,7 @@
   "globals": {
     "alert": true,
     "self": true,
+    "jest": true,
     "describe": true,
     "it": true,
     "expect": true
