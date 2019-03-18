@@ -3,7 +3,6 @@ import { mount } from "enzyme";
 import toJSON from "enzyme-to-json";
 import wait from "waait";
 import { MockedProvider } from "react-apollo/test-utils";
-import Router from "next/router";
 import RequestReset, { REQUEST_RESET_MUTATION } from "../components/RequestReset";
 
 const mocks = [
