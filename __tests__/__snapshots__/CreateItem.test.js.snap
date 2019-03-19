@@ -37,7 +37,7 @@ exports[`<CreateItem /> should render and match snapshot 1`] = `
         placeholder="Title"
         required={true}
         type="text"
-        value="Sample"
+        value=""
       />
     </label>
     <label
@@ -50,7 +50,7 @@ exports[`<CreateItem /> should render and match snapshot 1`] = `
         onChange={[Function]}
         required={true}
         type="number"
-        value={1000}
+        value={0}
       />
     </label>
     <label
@@ -63,7 +63,7 @@ exports[`<CreateItem /> should render and match snapshot 1`] = `
         onChange={[Function]}
         placeholder="Enter A Description"
         required={true}
-        value="Sample Description"
+        value=""
       />
     </label>
   </fieldset>

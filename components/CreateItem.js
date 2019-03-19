@@ -27,11 +27,11 @@ export const CREATE_ITEM_MUTATION = gql`
 
 class CreateItem extends Component {
   state = {
-    title: "Sample",
-    description: "Sample Description",
+    title: "",
+    description: "",
     image: "",
-    largeImage: "large-sample.jpg", // eslint-disable-line react/no-unused-state
-    price: 1000,
+    largeImage: "", // eslint-disable-line react/no-unused-state
+    price: 0,
   };
 
   handleChange = e => {
@@ -44,7 +44,6 @@ class CreateItem extends Component {
   handleSubmit = async (e, createItem) => {
     e.preventDefault();
     const res = await createItem();
-    console.log(res);
     Router.push({
       pathname: "/item",
       query: { id: res.data.createItem.id },
@@ -62,7 +61,6 @@ class CreateItem extends Component {
       body: data,
     });
     const file = await res.json();
-    console.log(file);
     this.setState({
       image: file.secure_url,
       largeImage: file.eager[0].secure_url, // eslint-disable-line react/no-unused-state
