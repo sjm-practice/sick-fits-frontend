@@ -30,7 +30,29 @@ Coding along with Wes Bos' [Advanced React Tutorial.](https://advancedreact.com/
 * lodash debounce
 * format-dns -does date formatting, similar to moment.js plus some other stuff (treeshaking?)
   
-## Topics
+## Deployment Notes
+* Three things to deploy
+  * Primsa Server [Mysql]
+  * Yoga Server [node backend: Mutation & Query Resolvers]
+  * React App [node / next.js, frontend]
+
+#### Deployment Steps
+* set up prisma server first
+  * start at app.prisma.io (add server)
+    * takes you through steps and logging in to Heroku
+    * choose Postgres for DB
+  * once set up, then deploy prisma to heroku using deploy:heroku script
+* set up yoga server (this is our node backend)
+  * create and deploy to heroku (used heroku cli - see video #66)
+    * need to add .env values to heroku, via app settings
+  * deploy to now
+    * install npm now global
+    * use now cli to deploy (very simple, see now docs how to use a .env file)
+      * https://zeit.co/docs/v2/deployments/environment-variables-and-secrets/
+* 
+
+
+## Course Topics
 
 ### Introduction and Setup
 1. Editor Setup and Starter Files Installation
