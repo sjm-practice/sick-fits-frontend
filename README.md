@@ -49,8 +49,9 @@ Coding along with Wes Bos' [Advanced React Tutorial.](https://advancedreact.com/
     * install npm now global
     * use now cli to deploy (very simple, see now docs how to use a .env file)
       * https://zeit.co/docs/v2/deployments/environment-variables-and-secrets/
-* 
-
+* TROUBLESHOOTING
+  * ran in to a cors issue (between heroku front end and back end)
+    * make sure the FRONTEND_URL config setting does not have the '/' on the end
 
 ## Course Topics
 
