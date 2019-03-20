@@ -5,8 +5,7 @@ import wait from "waait";
 import Router from "next/router";
 import NProgress from "nprogress";
 import { MockedProvider } from "react-apollo/test-utils";
-import { ApolloConsumer } from "react-apollo";
-import TakeMyMoney, { CREATE_ORDER_MUTATION } from "../components/TakeMyMoney";
+import TakeMyMoney from "../components/TakeMyMoney";
 import { fakeUser, fakeCartItem } from "../lib/testUtils";
 import { CURRENT_USER_QUERY } from "../components/User";
 
