@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next -p 3000",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "lint": "eslint . --ext .js,.jsx",
     "test": "NODE_ENV=test jest --watch --verbose false",
     "test-win": "SET NODE_ENV=test&& jest --watch",
