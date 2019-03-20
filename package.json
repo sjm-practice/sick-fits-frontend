@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx",
-    "test": "NODE_ENV=test jest --watch",
+    "test": "NODE_ENV=test jest --watch --verbose false",
     "test-win": "SET NODE_ENV=test&& jest --watch",
     "heroku-postbuild": "next build"
   },

@@ -8,7 +8,7 @@ import StripeCheckout from "react-stripe-checkout";
 import User, { CURRENT_USER_QUERY } from "./User";
 import calcTotalPrice from "../lib/calcTotalPrice";
 
-const CREATE_ORDER_MUTATION = gql`
+export const CREATE_ORDER_MUTATION = gql`
   mutation CREATE_ORDER_MUTATION($token: String!) {
     createOrder(token: $token) {
       id
@@ -48,7 +48,8 @@ class TakeMyMoney extends Component {
 
     return (
       <User>
-        {({ data: { me } }) => {
+        {({ data: { me }, loading }) => {
+          if (loading) return null;
           const { cart } = me;
           const image =
             cart.length && cart[0].item && cart[0].item.image ? cart[0].item.image : "";

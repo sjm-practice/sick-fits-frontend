@@ -14,7 +14,12 @@
   },
   "globals": {
     "alert": true,
-    "self": true
+    "self": true,
+    "jest": true,
+    "describe": true,
+    "it": true,
+    "afterAll": true,
+    "expect": true
   },
   "parserOptions": {
     "sourceType": "module",
